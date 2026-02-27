@@ -1,5 +1,5 @@
 // ============================================================================
-// HyperLocal — Bottom Navigation Bar
+// HyperLocal — Bottom Navigation Bar (Mobile Only, 2026 Enterprise)
 // ============================================================================
 'use client';
 
@@ -24,9 +24,8 @@ const tabs: { id: TabId; icon: typeof Home; label: string }[] = [
 
 export default function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom">
-      {/* Glass background */}
-      <div className="mx-3 mb-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-xl shadow-black/5">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom lg:hidden">
+      <div className="mx-3 mb-3 rounded-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 shadow-elevated-lg">
         <div className="flex items-center justify-around h-16 px-1">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
@@ -39,7 +38,7 @@ export default function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
                   onClick={() => onTabChange('create')}
                   className="relative -mt-5"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-400 flex items-center justify-center shadow-lg shadow-fuchsia-500/30 active:scale-90 transition-transform">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-400 flex items-center justify-center shadow-lg shadow-primary-500/30 active:scale-90 transition-transform">
                     <Plus size={26} className="text-white" strokeWidth={2.5} />
                   </div>
                 </button>
@@ -54,20 +53,20 @@ export default function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
               >
                 {isActive && (
                   <motion.div
-                    layoutId="nav-indicator"
+                    layoutId="mobile-nav-indicator"
                     className="absolute -top-0.5 w-8 h-1 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
                 <tab.icon
                   size={22}
-                  className={isActive ? 'text-violet-600 dark:text-violet-400' : 'text-gray-400'}
+                  className={isActive ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400 dark:text-gray-500'}
                   strokeWidth={isActive ? 2.2 : 1.8}
                 />
                 {tab.label && (
                   <span
                     className={`text-[10px] mt-0.5 font-medium ${
-                      isActive ? 'text-violet-600 dark:text-violet-400' : 'text-gray-400'
+                      isActive ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400 dark:text-gray-500'
                     }`}
                   >
                     {tab.label}

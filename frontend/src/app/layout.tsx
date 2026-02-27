@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta' });
 
 export const metadata: Metadata = {
   title: 'HyperLocal — Your Neighborhood, In Real Time',
@@ -25,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="antialiased mesh-gradient">
+    <html lang="en" className={`${inter.variable} ${jakarta.variable}`} suppressHydrationWarning>
+      <body className="antialiased font-sans">
         {children}
       </body>
     </html>

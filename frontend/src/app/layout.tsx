@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+
 export const metadata: Metadata = {
-  title: 'Hyperlocal Radar — Neighborhood Social Radar',
-  description: 'Real-time map-based feed of hyperlocal micro-events within your neighborhood. See pop-up vendors, safety alerts, lost & found, and more.',
+  title: 'HyperLocal — Your Neighborhood, In Real Time',
+  description: 'Real-time social feed of hyperlocal micro-events within your neighborhood. See pop-up vendors, safety alerts, lost & found, and more.',
   manifest: '/manifest.json',
   icons: { icon: '/favicon.ico', apple: '/apple-icon.png' },
 };
@@ -13,7 +16,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: '#FF6B35',
+  themeColor: '#8B5CF6',
 };
 
 export default function RootLayout({
@@ -22,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className="antialiased mesh-gradient">
         {children}
       </body>
     </html>

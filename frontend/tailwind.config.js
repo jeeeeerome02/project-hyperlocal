@@ -6,15 +6,19 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#FF6B35',
-          50: '#FFF3ED',
-          100: '#FFE1D0',
-          200: '#FFC2A1',
-          300: '#FF9E6B',
-          400: '#FF6B35',
-          500: '#E55A25',
-          600: '#C44A1A',
-          700: '#A03C15',
+          DEFAULT: '#8B5CF6',
+          50: '#F5F3FF',
+          100: '#EDE9FE',
+          200: '#DDD6FE',
+          300: '#C4B5FD',
+          400: '#A78BFA',
+          500: '#8B5CF6',
+          600: '#7C3AED',
+          700: '#6D28D9',
+        },
+        accent: {
+          DEFAULT: '#D946EF',
+          warm: '#FF6B35',
         },
         trust: {
           blue: '#0984E3',
@@ -39,6 +43,13 @@ module.exports = {
         card: '12px',
         button: '8px',
         pill: '24px',
+        '4xl': '2rem',
+      },
+      boxShadow: {
+        glass: '0 8px 32px rgba(0, 0, 0, 0.06)',
+        'glass-lg': '0 16px 48px rgba(0, 0, 0, 0.08)',
+        glow: '0 0 40px rgba(139, 92, 246, 0.15)',
+        'glow-fuchsia': '0 0 40px rgba(217, 70, 239, 0.15)',
       },
     },
   },
